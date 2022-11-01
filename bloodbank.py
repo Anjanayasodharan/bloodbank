@@ -14,12 +14,12 @@ while True:
         print('blood banker enter selected')
         nameofdonar = input('enter the name')
         address = input('enter the address')
-        phno = input('enter the phno')
+        phnno = input('enter the phno')
         bloodgroup = input('enter the bloodgroup ')
         litreofblood = input('enter the litreofblood')
-        sql = 'INSERT INTO `bloodbank`( `nameofdonar`, `address	`, `phnno`, `bloodgroup`,`literofblooddonated`) VALUES (%s,%s,%s,%s,%s)'
+        sql = 'INSERT INTO `bloodbank`( `nameofdonar`,`address`,`phnno`, `bloodgroup`,`literofblooddonated`) VALUES (%s,%s,%s,%s,%s)'
 
-        data = (nameofdonar, address,phno,bloodgroup,litreofblood)
+        data = (nameofdonar,address,phnno,bloodgroup,litreofblood)
         mycursor.execute(sql , data)
         mydb.commit()
     elif(choice==2):
