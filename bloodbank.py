@@ -9,7 +9,8 @@ while True:
     print("3 search a blood banker")
     print("4 update the blood banker")    
     print("5 delete a blood banker")
-    print("6 exit")
+    print("6 average of blood donated")
+    print("7 exit")
     choice = int(input('enter an option:'))
     if(choice==1):
         print('blood banker enter selected')
@@ -57,4 +58,10 @@ while True:
         mydb.commit()
         print("data deleted succesfully")
     elif(choice==6):
+        print('Total blood donated ')
+        sql = 'SELECT AVG(`literofblooddonated`) FROM `bloodbank` '
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
+    elif(choice==7):
         break
