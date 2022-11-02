@@ -1,3 +1,4 @@
+from unicodedata import name
 import mysql.connector
 mydb = mysql.connector.connect(host = 'localhost' , user = 'root' , password = '' , database = 'bloodbankdb')
 mycursor = mydb.cursor()
@@ -36,7 +37,18 @@ while True:
         result = mycursor.fetchall()
         print(result)
     elif(choice==4):
-        print('update blood banker')
+        print('update blood donar details')
+        bloodgroup=input('enter the blood group')
+        nameofdonar = input('enter the name')
+        address =input('enter the details')
+        phnno =input('enter the phone number')
+        literofblooddonated=input('enter the litre of blood')
+        sql = "UPDATE `bloodbank` SET `nameofdonar`='"+nameofdonar+"',`phnno`='"+phnno+"',`bloodgroup`='"+bloodgroup+"',`literofblooddonated`='"+literofblooddonated+"' WHERE `bloodgroup`='"+bloodgroup+"'"
+        mycursor.execute(sql)
+        mydb.commit()
+        print("data updated succesfully")
+
+        mycursor.execute(sql)
     elif(choice==5):
         print('delete blood banker')
     elif(choice==6):
